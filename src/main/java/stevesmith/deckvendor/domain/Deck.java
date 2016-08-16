@@ -37,11 +37,20 @@ public class Deck {
 		return cards.size();
 	}
 
+	/**
+	 * Shuffles the deck using Collections.shuffle
+	 * 
+	 * @return deck
+	 */
+	// this is what I would do for shuffling
 	public Deck shuffle() {
 		Collections.shuffle(cards);
 		return this;
 	}
 
+	// this is a second shuffle function while it is ordered by
+	// hash value I thought it was an interesting way to solve this problem
+	// and that Collections.shuffle isn't truly random.
 	public Deck shuffle2() {
 		if (cards == null) {
 			return this;

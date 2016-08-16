@@ -17,9 +17,15 @@ public class DeckService {
 	public HashMap<String, Deck> decks;
 
 	public DeckService() {
-		System.out.println("deck service created");
 	}
 
+	/**
+	 * creates a standard 52 card deck in order. Suit order: spades hearts clubs
+	 * diamonds Rank order: Ace - King
+	 * 
+	 * @param name
+	 * @return
+	 */
 	// creates a standard 52 card deck in order.
 	public Deck createStandardDeck(String name) {
 		List<Card> cards = new ArrayList<Card>();
