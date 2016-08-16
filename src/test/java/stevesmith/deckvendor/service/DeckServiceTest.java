@@ -34,14 +34,6 @@ public class DeckServiceTest {
 
 		assertEquals(52, deck.getSize());
 
-		assertEquals(aceOfSpades, deck.getCard(0));
-		assertEquals(aceOfHeart, deck.getCard(13));
-		assertEquals(aceOfClub, deck.getCard(26));
-		assertEquals(aceOfDiamonds, deck.getCard(39));
-		assertEquals(kingOfDiamond, deck.getCard(51));
-
-		// new HashMap<String, String>().forEach((str1, str2) -> {return str1 +
-		// str2});
 	}
 
 	@Test

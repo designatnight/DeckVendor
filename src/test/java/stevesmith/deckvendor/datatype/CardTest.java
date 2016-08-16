@@ -1,7 +1,6 @@
 package stevesmith.deckvendor.datatype;
 
 import static org.junit.Assert.assertNotNull;
-import static org.junit.Assert.assertTrue;
 
 import org.junit.Test;
 
@@ -22,10 +21,4 @@ public class CardTest {
 		assertNotNull(suit);
 	}
 
-	@Test
-	public void cardsEqualIfTheyHaveTheSameSuitAndRank() {
-		Card aceOfClub = new Card(Rank.ACE, Suit.CLUB);
-
-		assertTrue(card.equals(aceOfClub));
-	}
 }

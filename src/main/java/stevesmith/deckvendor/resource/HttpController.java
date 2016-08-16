@@ -32,7 +32,10 @@ public class HttpController {
 
 	}
 
-	@Path(value = "{name}")
+	// Normally I wouldn't make a put create a new object. Usually I would use a
+	// post for this, also using a path variable
+	// is not in the long term wise, but for now it will work.
+	@Path(value = "/{name}")
 	@PUT
 	@Produces("application/json")
 	public Deck createNewDeck(@PathParam("name") String name) {

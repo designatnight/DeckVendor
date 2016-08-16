@@ -42,15 +42,6 @@ public class DeckTest {
 		assertThat(kingOfDiamond, not(deck.getCard(51)));
 	}
 
-	/*
-	 * @Test public void canShuffleDeckByUsingSet() { deck.shuffle2();
-	 * 
-	 * assertNotEquals(aceOfSpades, deck.getCard(0));
-	 * assertNotEquals(aceOfHeart, deck.getCard(13)); assertNotEquals(aceOfClub,
-	 * deck.getCard(26)); assertNotEquals(aceOfDiamonds, deck.getCard(39));
-	 * assertNotEquals(kingOfDiamond, deck.getCard(51)); }
-	 */
-
 	@Test
 	public void canShuffleDeckByUsingSetNullListCheck() {
 		Deck deck2 = new Deck("test2", null);
