@@ -26,7 +26,6 @@ public class DeckService {
 	 * @param name
 	 * @return
 	 */
-	// creates a standard 52 card deck in order.
 	public Deck createStandardDeck(String name) {
 		List<Card> cards = new ArrayList<Card>();
 		for (Suit suit : Suit.values()) {
@@ -44,12 +43,21 @@ public class DeckService {
 	}
 
 	public Deck getDeckByName(String deckName) {
-		return decks.get(deckName);
+		if (decks.containsKey(deckName)) {
+			return decks.get(deckName);
+		}
+		return null;
 	}
 
 	public List<Deck> getDecks() {
 		List<Deck> deckList = new ArrayList<Deck>();
 		decks.values().forEach((deck) -> deckList.add(deck));
 		return deckList;
+	}
+
+	public void deleteDeck(String deckName) {
+		if (decks.containsKey(deckName)) {
+			decks.remove(deckName);
+		}
 	}
 }
