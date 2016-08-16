@@ -24,3 +24,7 @@ size would not become an issue before we could implement it.
 3. The ability to change shuffling strategy at deploy time is a primary feature, however
 setting up a default shuffle would solve the overall goal.
 
+
+Build instructions
+Build with maven and run.
+
