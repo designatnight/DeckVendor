@@ -5,9 +5,7 @@ import com.fasterxml.jackson.annotation.JsonAutoDetect;
 @JsonAutoDetect
 public class Card {
 
-	// @JsonProperty
 	private Rank rank;
-	// @JsonProperty
 	private Suit suit;
 
 	public Card(Rank rank, Suit suit) {
@@ -35,6 +33,7 @@ public class Card {
 		return false;
 	}
 
+	// for convenience overrode this to make debugging easier
 	@Override
 	public String toString() {
 		return rank.getShortName() + "-" + suit.getShortName();
