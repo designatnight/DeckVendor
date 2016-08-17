@@ -26,5 +26,5 @@ setting up a default shuffle would solve the overall goal.
 
 
 Build instructions
-Build with maven and run.
+to run:'mvn exec:java'
 
