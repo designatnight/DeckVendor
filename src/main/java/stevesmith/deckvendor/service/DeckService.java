@@ -7,7 +7,7 @@ import java.util.List;
 import javax.inject.Singleton;
 
 import stevesmith.deckvendor.datatype.Card;
-import stevesmith.deckvendor.datatype.Rank;
+import stevesmith.deckvendor.datatype.RankAceLow;
 import stevesmith.deckvendor.datatype.Suit;
 import stevesmith.deckvendor.domain.Deck;
 
@@ -29,7 +29,7 @@ public class DeckService {
 	public Deck createStandardDeck(String name) {
 		List<Card> cards = new ArrayList<Card>();
 		for (Suit suit : Suit.values()) {
-			for (Rank rank : Rank.values()) {
+			for (RankAceLow rank : RankAceLow.values()) {
 				Card card = new Card(rank, suit);
 				cards.add(card);
 			}

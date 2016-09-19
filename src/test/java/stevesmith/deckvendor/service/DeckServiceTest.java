@@ -7,7 +7,7 @@ import org.junit.Before;
 import org.junit.Test;
 
 import stevesmith.deckvendor.datatype.Card;
-import stevesmith.deckvendor.datatype.Rank;
+import stevesmith.deckvendor.datatype.RankAceLow;
 import stevesmith.deckvendor.datatype.Suit;
 import stevesmith.deckvendor.domain.Deck;
 
@@ -16,11 +16,11 @@ public class DeckServiceTest {
 	private DeckService deckService = new DeckService();
 	private Deck deck;
 	private String deckName;
-	private Card aceOfSpades = new Card(Rank.ACE, Suit.SPADE);
-	private Card aceOfHeart = new Card(Rank.ACE, Suit.HEART);
-	private Card aceOfClub = new Card(Rank.ACE, Suit.CLUB);
-	private Card aceOfDiamonds = new Card(Rank.ACE, Suit.DIAMOND);
-	private Card kingOfDiamond = new Card(Rank.KING, Suit.DIAMOND);
+	private Card aceOfSpades = new Card(RankAceLow.ACE, Suit.SPADE);
+	private Card aceOfHeart = new Card(RankAceLow.ACE, Suit.HEART);
+	private Card aceOfClub = new Card(RankAceLow.ACE, Suit.CLUB);
+	private Card aceOfDiamonds = new Card(RankAceLow.ACE, Suit.DIAMOND);
+	private Card kingOfDiamond = new Card(RankAceLow.KING, Suit.DIAMOND);
 
 	@Before
 	public void doSetup() {

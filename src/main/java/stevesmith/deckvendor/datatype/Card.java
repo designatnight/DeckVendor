@@ -5,15 +5,15 @@ import com.fasterxml.jackson.annotation.JsonAutoDetect;
 @JsonAutoDetect
 public class Card {
 
-	private Rank rank;
+	private RankAceLow rank;
 	private Suit suit;
 
-	public Card(Rank rank, Suit suit) {
+	public Card(RankAceLow rank, Suit suit) {
 		this.rank = rank;
 		this.suit = suit;
 	}
 
-	public Rank getRank() {
+	public RankAceLow getRank() {
 		return rank;
 
 	}

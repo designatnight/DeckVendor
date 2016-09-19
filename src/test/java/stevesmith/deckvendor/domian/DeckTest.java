@@ -10,7 +10,7 @@ import org.junit.Before;
 import org.junit.Test;
 
 import stevesmith.deckvendor.datatype.Card;
-import stevesmith.deckvendor.datatype.Rank;
+import stevesmith.deckvendor.datatype.RankAceLow;
 import stevesmith.deckvendor.datatype.Suit;
 import stevesmith.deckvendor.domain.Deck;
 
@@ -18,11 +18,11 @@ public class DeckTest {
 
 	private String deckName;
 	private Deck deck;
-	private Card aceOfSpades = new Card(Rank.ACE, Suit.SPADE);
-	private Card aceOfHeart = new Card(Rank.ACE, Suit.HEART);
-	private Card aceOfClub = new Card(Rank.ACE, Suit.CLUB);
-	private Card aceOfDiamonds = new Card(Rank.ACE, Suit.DIAMOND);
-	private Card kingOfDiamond = new Card(Rank.KING, Suit.DIAMOND);
+	private Card aceOfSpades = new Card(RankAceLow.ACE, Suit.SPADE);
+	private Card aceOfHeart = new Card(RankAceLow.ACE, Suit.HEART);
+	private Card aceOfClub = new Card(RankAceLow.ACE, Suit.CLUB);
+	private Card aceOfDiamonds = new Card(RankAceLow.ACE, Suit.DIAMOND);
+	private Card kingOfDiamond = new Card(RankAceLow.KING, Suit.DIAMOND);
 
 	@Before
 	public void doSetup() {
@@ -58,14 +58,36 @@ public class DeckTest {
 	}
 
 	@Test
+	public void reshuffleingAShuffledDeckCreatesNewOrder() {
+
+		deck.shuffle();
+
+		Card card0 = deck.getCard(0);
+		Card card13 = deck.getCard(13);
+		Card card26 = deck.getCard(26);
+		Card card39 = deck.getCard(39);
+		Card card51 = deck.getCard(51);
+
+		deck.shuffle();
+
+		assertThat(card0, not(deck.getCard(0)));
+		assertThat(card13, not(deck.getCard(13)));
+		assertThat(card26, not(deck.getCard(26)));
+		assertThat(card39, not(deck.getCard(39)));
+		assertThat(card51, not(deck.getCard(51)));
+
+	}
+
+	@Test
 	public void canPassInShuffleingAlgorithm() {
 
+		// deck.customeShuffle();
 	}
 
 	private Deck createStandardDeck() {
 		List<Card> cards = new ArrayList<Card>();
 		for (Suit suit : Suit.values()) {
-			for (Rank rank : Rank.values()) {
+			for (RankAceLow rank : RankAceLow.values()) {
 				Card card = new Card(rank, suit);
 				cards.add(card);
 			}

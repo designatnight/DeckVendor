@@ -46,16 +46,14 @@ public class HttpController {
 	@POST
 	@Produces("application/json")
 	public Deck shuffleDeck(@PathParam("name") String name) {
-		Deck deck = deckService.getDeckByName(name);
-		deck.shuffle();
-		return deck;
+		return deckService.getDeckByName(name).shuffle();
 	}
 
 	@Path(value = "{name}")
 	@GET
 	@Produces("application/json")
 	public Deck getDeck(@PathParam("name") String name) {
-		return deckService.getDeckByName(name).shuffle();
+		return deckService.getDeckByName(name);
 	}
 
 	@Path(value = "")

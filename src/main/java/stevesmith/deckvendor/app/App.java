@@ -16,6 +16,8 @@ public class App {
 	// Base URI the Grizzly HTTP server will listen on
 	public static final String BASE_URI = "http://localhost:8080/myapp/";
 
+	private static volatile HttpServer SERVER = null;
+
 	/**
 	 * Starts Grizzly HTTP server exposing JAX-RS resources defined in this
 	 * application.
@@ -38,7 +40,7 @@ public class App {
 
 		// create and start a new instance of grizzly http server
 		// exposing the Jersey application at BASE_URI
-		return GrizzlyHttpServerFactory.createHttpServer(URI.create(BASE_URI), rc);
+		return SERVER = GrizzlyHttpServerFactory.createHttpServer(URI.create(BASE_URI), rc);
 	}
 
 	/**
@@ -48,12 +50,16 @@ public class App {
 	 * @throws IOException
 	 */
 	public static void main(String[] args) throws IOException {
-		final HttpServer server = startServer();
+		startServer();
 		System.out.println(String.format(
 				"Jersey app started with WADL available at " + "%sapplication.wadl\nHit enter to stop it...",
 				BASE_URI));
 		System.in.read();
-		server.stop();
+		stopServer();
 	}
 
+	public static void stopServer() {
+		SERVER.stop();
+		SERVER = null;
+	}
 }

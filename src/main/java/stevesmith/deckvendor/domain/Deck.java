@@ -61,4 +61,9 @@ public class Deck {
 		return this;
 	}
 
+	public Deck customeShuffle(String function) {
+
+		return null;
+	}
+
 }
